@@ -3,7 +3,7 @@ package com.luv2code.springboot.employees.service;
 import com.luv2code.springboot.employees.dao.EmployeeDao;
 import com.luv2code.springboot.employees.entity.Employee;
 import com.luv2code.springboot.employees.request.EmployeeRequest;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +32,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Transactional
     @Override
     public Employee save(EmployeeRequest theEmployeeRequest) {
-        Employee employee = convertToEmployee(0L,theEmployeeRequest);
+        Employee employee = convertToEmployee(null,theEmployeeRequest);
         return employeeDao.save(employee);
     }
 

@@ -1,9 +1,11 @@
 package com.luv2code.springboot.employees.controller;
 
 import com.luv2code.springboot.employees.entity.Employee;
+import com.luv2code.springboot.employees.request.EmployeeRequest;
 import com.luv2code.springboot.employees.service.EmployeeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,5 +37,27 @@ public class EmployeeRestController {
     @GetMapping("/{employeeId}")
     public Employee findById(@PathVariable @Min(value=2) Long employeeId) {
         return employeeService.findById(employeeId);
+    }
+
+    @Operation(summary = "Create a new employee", description = "Add a new employee to db.")
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping()
+    public Employee createEmployee(@Valid @RequestBody EmployeeRequest employeeRequest) {
+        return employeeService.save(employeeRequest);
+    }
+
+    @Operation(summary = "Update an employee", description = "Update the details of a current employee.")
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/{employeeId}")
+    public Employee updateEmployee(@PathVariable @Min(value=1) long employeeId,
+                                   @Valid @RequestBody EmployeeRequest employeeRequest) {
+        return employeeService.update(employeeId, employeeRequest);
+    }
+
+    @Operation(summary = "Delete a employee", description = "Remove an employee from the database.")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{employeeId}")
+    public void deleteEmployee(@PathVariable @Min(value=1) long employeeId) {
+        employeeService.deleteById(employeeId);
     }
 }
