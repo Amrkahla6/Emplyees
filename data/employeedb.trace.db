@@ -10,3 +10,12 @@ select user_id, password, active from system_users where user_id=? [42102-240]
 2026-07-02 18:18:34.490536+03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SYSTEM_USERS" not found; SQL statement:
 select user_id, password, active from system_users where user_id=? [42102-240]
+2026-07-02 18:22:36.137087+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * [*]users"; SQL statement:
+SELECT * users [42000-240]
+2026-07-02 18:24:25.287911+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SYSTEM_USERS" not found; SQL statement:
+select user_id, password, active from system_users where user_id=? [42102-240]
+2026-07-02 18:24:32.184726+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SYSTEM_USERS" not found; SQL statement:
+select user_id, password, active from system_users where user_id=? [42102-240]
