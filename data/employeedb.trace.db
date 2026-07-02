@@ -1,0 +1,12 @@
+2026-07-02 18:17:03.118735+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SYSTEM_USERS" not found; SQL statement:
+select user_id, password, active from system_users where user_id=? [42102-240]
+2026-07-02 18:17:29.574511+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SYSTEM_USERS" not found; SQL statement:
+select user_id, password, active from system_users where user_id=? [42102-240]
+2026-07-02 18:18:09.476990+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SYSTEM_USERS" not found; SQL statement:
+select user_id, password, active from system_users where user_id=? [42102-240]
+2026-07-02 18:18:34.490536+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SYSTEM_USERS" not found; SQL statement:
+select user_id, password, active from system_users where user_id=? [42102-240]
